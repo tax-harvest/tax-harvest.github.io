@@ -13,6 +13,10 @@
 import { supabase } from '$lib/supabase';
 import type { LayoutLoad } from './$types';
 
+// Static adapter settings for GitHub Pages
+export const prerender = true;
+export const ssr = false;
+
 export const load: LayoutLoad = async () => {
 	/**
 	 * Get the current session from Supabase

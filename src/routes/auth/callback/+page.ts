@@ -8,6 +8,9 @@ import { redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 import { supabase } from '$lib/supabase';
 
+// Disable prerendering for dynamic auth callback
+export const prerender = false;
+
 export const load: PageLoad = async ({ url }) => {
 	// Get the authorization code from URL params
 	const code = url.searchParams.get('code');
